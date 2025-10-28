@@ -19,14 +19,20 @@ website:
     right:
       - icon: github
         href: https://ianlopezdiaz.github.io/gh-page-from-jupyter-notebook
+  page-footer:
+    left: "Made by ianlopezdiaz"
+    right: "© 2025"
+
 
 format:
   html:
     theme:
-      dark: darkly
-      light: cosmo
+      dark: solar
+      light: minty
     toc: true
     toc-depth: 3
     code-fold: false
     highlight-style: github
+
+
 
