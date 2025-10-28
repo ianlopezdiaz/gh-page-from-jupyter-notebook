@@ -8,13 +8,13 @@ website:
   #favicon: images/favicon.ico # opcional — remova se não tiver
   navbar:
     left:
-      - text: "Introdução"
+      - text: "Introduction"
         href: index.md
-      - text: "Primeiro Notebook"
+      - text: "First Notebook"
         href: notebook-01.ipynb
-      - text: "Segundo Notebook"
+      - text: "Second Notebook"
         href: notebook-02.ipynb
-      - text: "Terceiro Notebook"
+      - text: "Third Notebook"
         href: notebook-03.ipynb
     right:
       - icon: github
@@ -23,8 +23,8 @@ website:
 format:
   html:
     theme:
-      light: cosmo
       dark: darkly
+      light: cosmo
     toc: true
     toc-depth: 3
     code-fold: false
