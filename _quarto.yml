@@ -20,8 +20,9 @@ website:
       - icon: github
         href: https://ianlopezdiaz.github.io/gh-page-from-jupyter-notebook
   page-footer:
-    left: "Made by ianlopezdiaz"
-    right: "© 2025"
+    left: "© 2025 ianlopezdiaz"
+    right: "Made using [Quarto](https://quarto.org/)"
+
 
 
 format:
