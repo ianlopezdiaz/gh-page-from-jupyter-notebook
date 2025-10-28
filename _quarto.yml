@@ -1,0 +1,32 @@
+project:
+  type: website
+
+website:
+  title: "GitHub page created from Jupyter Notebook"
+  description: "Sample GitHub page created from Jupyter Notebook using Quarto"
+  site-url: "https://ianlopezdiaz.github.io/gh-page-from-jupyter-notebook"
+  #favicon: images/favicon.ico # opcional — remova se não tiver
+  navbar:
+    left:
+      - text: "Introdução"
+        href: index.md
+      - text: "Primeiro Notebook"
+        href: notebook-01.ipynb
+      - text: "Segundo Notebook"
+        href: notebook-02.ipynb
+      - text: "Terceiro Notebook"
+        href: notebook-03.ipynb
+    right:
+      - icon: github
+        href: https://ianlopezdiaz.github.io/gh-page-from-jupyter-notebook
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    toc: true
+    toc-depth: 3
+    code-fold: false
+    highlight-style: github
+
