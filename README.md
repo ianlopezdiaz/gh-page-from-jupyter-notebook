@@ -52,14 +52,14 @@ pip install quarto-cli
 quarto render
 ```
 
-### 7. Commit
+### 6. Commit
 ```bash
 git add .
 git commit -m "some message"
 git push origin
 ```
 
-### 6. Publish the site
+### 7. Publish the site
 ```bash
 quarto publish gh-pages
 ```
