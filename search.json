@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sample GitHub page created from Jupyter Notebook using Quarto",
+    "section": "",
+    "text": "This is just an example of a static web page created from a collection of Jupyter notebooks to be hosted on GitHub pages.\n\n\n\nNotebook 1 Primeiro notebook. Apenas um exemplo de uso do sklearn.\nNotebook 2 Segundo notebook. Outro exemplo de uso do sklearn.\nNotebook 3 Terceiro notebook. Mais um exemplo de uso do sklearn.\n\n\n\n\n\nInstall requirements:\npip install -r requirements.txt\nor clone my environment:\nconda env create -f environment.yml\nYou can change name from “data-science” to anything you like in the environment.yml file if you already have an Anaconda environment with this name or you simply want to use a different name for whatever reason."
+  },
+  {
+    "objectID": "index.html#index",
+    "href": "index.html#index",
+    "title": "Sample GitHub page created from Jupyter Notebook using Quarto",
+    "section": "",
+    "text": "Notebook 1 Primeiro notebook. Apenas um exemplo de uso do sklearn.\nNotebook 2 Segundo notebook. Outro exemplo de uso do sklearn.\nNotebook 3 Terceiro notebook. Mais um exemplo de uso do sklearn."
+  },
+  {
+    "objectID": "index.html#reproduce-locally",
+    "href": "index.html#reproduce-locally",
+    "title": "Sample GitHub page created from Jupyter Notebook using Quarto",
+    "section": "",
+    "text": "Install requirements:\npip install -r requirements.txt\nor clone my environment:\nconda env create -f environment.yml\nYou can change name from “data-science” to anything you like in the environment.yml file if you already have an Anaconda environment with this name or you simply want to use a different name for whatever reason."
+  },
+  {
+    "objectID": "notebook-03.html",
+    "href": "notebook-03.html",
+    "title": "Underfitting vs. Overfitting",
+    "section": "",
+    "text": "An example taken from this site to demonstrate underfitting and ovverfitting.\n\n# Authors: The scikit-learn developers\n# SPDX-License-Identifier: BSD-3-Clause\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.model_selection import cross_val_score\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.preprocessing import PolynomialFeatures\n\n\ndef true_fun(X):\n    return np.cos(1.5 * np.pi * X)\n\n\nnp.random.seed(0)\n\nn_samples = 30\ndegrees = [1, 4, 15]\n\nX = np.sort(np.random.rand(n_samples))\ny = true_fun(X) + np.random.randn(n_samples) * 0.1\n\nplt.figure(figsize=(14, 5))\nfor i in range(len(degrees)):\n    ax = plt.subplot(1, len(degrees), i + 1)\n    plt.setp(ax, xticks=(), yticks=())\n\n    polynomial_features = PolynomialFeatures(degree=degrees[i], include_bias=False)\n    linear_regression = LinearRegression()\n    pipeline = Pipeline(\n        [\n            (\"polynomial_features\", polynomial_features),\n            (\"linear_regression\", linear_regression),\n        ]\n    )\n    pipeline.fit(X[:, np.newaxis], y)\n\n    # Evaluate the models using crossvalidation\n    scores = cross_val_score(\n        pipeline, X[:, np.newaxis], y, scoring=\"neg_mean_squared_error\", cv=10\n    )\n\n    X_test = np.linspace(0, 1, 100)\n    plt.plot(X_test, pipeline.predict(X_test[:, np.newaxis]), label=\"Model\")\n    plt.plot(X_test, true_fun(X_test), label=\"True function\")\n    plt.scatter(X, y, edgecolor=\"b\", s=20, label=\"Samples\")\n    plt.xlabel(\"x\")\n    plt.ylabel(\"y\")\n    plt.xlim((0, 1))\n    plt.ylim((-2, 2))\n    plt.legend(loc=\"best\")\n    plt.title(\n        \"Degree {}\\nMSE = {:.2e}(+/- {:.2e})\".format(\n            degrees[i], -scores.mean(), scores.std()\n        )\n    )\nplt.show()"
+  },
+  {
+    "objectID": "notebook-02.html",
+    "href": "notebook-02.html",
+    "title": "An example of K-Means++ initialization",
+    "section": "",
+    "text": "Example taken from this site just to showcase the use of Kmeans and a nice looking figure.\n\n# Authors: The scikit-learn developers\n# SPDX-License-Identifier: BSD-3-Clause\n\nimport matplotlib.pyplot as plt\n\nfrom sklearn.cluster import kmeans_plusplus\nfrom sklearn.datasets import make_blobs\n\n# Generate sample data\nn_samples = 4000\nn_components = 4\n\nX, y_true = make_blobs(\n    n_samples=n_samples, centers=n_components, cluster_std=0.60, random_state=0\n)\nX = X[:, ::-1]\n\n# Calculate seeds from k-means++\ncenters_init, indices = kmeans_plusplus(X, n_clusters=4, random_state=0)\n\n# Plot init seeds along side sample data\nplt.figure(1, figsize=(10,10))\ncolors = [\"#4EACC5\", \"#FF9C34\", \"#4E9A06\", \"m\"]\n\nfor k, col in enumerate(colors):\n    cluster_data = y_true == k\n    plt.scatter(X[cluster_data, 0], X[cluster_data, 1], c=col, marker=\".\", s=10)\n\nplt.scatter(centers_init[:, 0], centers_init[:, 1], c=\"b\", s=50)\nplt.title(\"K-Means++ Initialization\")\nplt.xticks([])\nplt.yticks([])\nplt.show()"
+  },
+  {
+    "objectID": "notebook-01.html",
+    "href": "notebook-01.html",
+    "title": "Sample Data Science project",
+    "section": "",
+    "text": "first we import all we need\n\nimport numpy as np\nimport pandas as pd\nimport statsmodels.api as sm\n#import sklearn\nfrom sklearn.datasets import load_diabetes\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.model_selection import cross_val_predict\nfrom sklearn.metrics import PredictionErrorDisplay\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nsns.set()\n\n\nLoading the data\nJust loaging some stock data from scikit-learn and making some plots.\n\nX, y = load_diabetes(return_X_y=True)\nlr = LinearRegression()\n\ny_pred = cross_val_predict(lr, X, y, cv=10)\n\nfig, axs = plt.subplots(ncols=2, figsize=(8, 4))\nPredictionErrorDisplay.from_predictions(\n    y,\n    y_pred=y_pred,\n    kind=\"actual_vs_predicted\",\n    subsample=100,\n    ax=axs[0],\n    random_state=0,\n)\naxs[0].set_title(\"Actual vs. Predicted values\")\nPredictionErrorDisplay.from_predictions(\n    y,\n    y_pred=y_pred,\n    kind=\"residual_vs_predicted\",\n    subsample=100,\n    ax=axs[1],\n    random_state=0,\n)\naxs[1].set_title(\"Residuals vs. Predicted Values\")\nfig.suptitle(\"Plotting cross-validated predictions\")\nplt.tight_layout()\nplt.show()"
+  }
+]
