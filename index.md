@@ -6,14 +6,14 @@ of Jupyter notebooks to be hosted on GitHub pages.
 
 ## Index
 
-1. **[Notebook 1](notebook-01.ipynb)**
-First notebook. Just and example using sklearn.
+1. **[First notebook.](notebook-01.ipynb)**
+Just an example using sklearn.
 
-2. **[Notebook 2](notebook-02.ipynb)**
-Second notebook. Another example using sklearn.
+2. **[Second notebook.](notebook-02.ipynb)**
+Another example using sklearn.
 
-3. **[Notebook 3](notebook-03.ipynb)**
-Third notebook. Yet another example using sklearn.
+3. **[Third notebook.](notebook-03.ipynb)**
+Yet another example using sklearn.
 
 
 ---
