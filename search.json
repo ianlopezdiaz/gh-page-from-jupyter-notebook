@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Sample GitHub page created from Jupyter Notebook using Quarto",
     "section": "",
-    "text": "This is just an example of a static web page created from a collection of Jupyter notebooks to be hosted on GitHub pages.\n\n\n\nNotebook 1 First notebook. Just and example using sklearn.\nNotebook 2 Second notebook. Another example using sklearn.\nNotebook 3 Third notebook. Yet another example using sklearn.\n\n\n\n\n\nInstall requirements:\npip install -r requirements.txt\nor clone my environment:\nconda env create -f environment.yml\nYou can change name from “data-science” to anything you like in the environment.yml file if you already have an Anaconda environment with this name or you simply want to use a different name for whatever reason."
+    "text": "This is just an example of a static web page created from a collection of Jupyter notebooks to be hosted on GitHub pages.\n\n\n\nFirst notebook. Just an example using sklearn.\nSecond notebook. Another example using sklearn.\nThird notebook. Yet another example using sklearn.\n\n\n\n\n\nInstall requirements:\npip install -r requirements.txt\nor clone my environment:\nconda env create -f environment.yml\nYou can change name from “data-science” to anything you like in the environment.yml file if you already have an Anaconda environment with this name or you simply want to use a different name for whatever reason."
   },
   {
     "objectID": "index.html#index",
     "href": "index.html#index",
     "title": "Sample GitHub page created from Jupyter Notebook using Quarto",
     "section": "",
-    "text": "Notebook 1 First notebook. Just and example using sklearn.\nNotebook 2 Second notebook. Another example using sklearn.\nNotebook 3 Third notebook. Yet another example using sklearn."
+    "text": "First notebook. Just an example using sklearn.\nSecond notebook. Another example using sklearn.\nThird notebook. Yet another example using sklearn."
   },
   {
     "objectID": "index.html#reproduce-locally",
