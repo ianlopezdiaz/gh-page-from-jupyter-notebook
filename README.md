@@ -23,7 +23,7 @@ conda env create -f environment.yml
 ```
 
 You can change `name` from "data-science" to anything you like in the `environment.yml` file
-if you already have an Anaconda environment with this name or you simply want to use a different name for whatever reason.
+if you already have an Anaconda/Miniconda environment with this name or you simply want to use a different name for whatever reason.
 
 ---
 
@@ -38,7 +38,7 @@ However many you want. Use an old project. Just get some notebooks.
 ### 2. Create a "_quarto.yml" file
 Addapt the structure of [this file](_quarto.yml) according to your notebooks.
 
-### 3. Create an "index.md" fiel
+### 3. Create an "index.md" file
 It will be your page's index.
 Addapt the structure of [this file](index.md) according to your notebooks.
 
